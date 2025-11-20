@@ -1,0 +1,117 @@
+@use '@/styles/typography.scss' as types;
+@use '@/styles/variables.scss' as var;
+
+.creditCard {
+  padding: 1.125rem 1.75rem 2.4375rem;
+  position: relative;
+  border-radius: var(--border-radius-xl);
+  background: var(--credit-card-bg);
+  color: var(--pure-white);
+  width: 22.125rem;
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      @include types.cc-font-16-bold;
+      color: var(--pure-white);
+    }
+
+    .separator {
+      background-color: var(--text-150);
+      width: 0.0625rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      height: 1.25rem;
+    }
+
+    .bank {
+      @include types.cc-font-12-medium;
+      color: var(--text-150);
+    }
+  }
+
+  .chipRow {
+    display: flex;
+    margin-top: 1.6875rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cardNumber {
+    display: flex;
+    margin-top: 1.3125rem;
+    color: var(--pure-white);
+    @include types.cc-font-17-bold;
+    letter-spacing: 0.1062rem;
+  }
+
+  .cardNumberShort {
+    color: var(--text-100);
+    text-align: left;
+    margin-top: 1.5rem;
+    @include types.cc-font-16-bold;
+    letter-spacing: 10%;
+  }
+
+  .expiryDate {
+    text-align: left;
+    margin-top: 0.5rem;
+    color: var(--text-400);
+    @include types.cc-font-14-medium;
+  }
+
+  .cardTypeLogo {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+  }
+
+  &.other {
+    width: 20.25rem;
+    z-index: 20;
+    padding: 1rem 0.75rem 1.25rem 1.25rem;
+    border: 0.5px solid;
+    background: var(--credit-card-transparent);
+    border-image-source: var(--credit-card-border);
+    backdrop-filter: blur(0.625rem);
+
+    .chipRow {
+      margin-top: 0.8125rem;
+    }
+
+    .header {
+      .logo {
+        color: var(--pure-white);
+      }
+      .separator {
+        background-color: var(--gray-300);
+      }
+      .bank {
+        color: var(--gray-300);
+      }
+    }
+
+    .expiryDate {
+      color: var(--text-200);
+      @include types.cc-font-12-medium;
+      letter-spacing: 2%;
+    }
+
+    .cardTypeLogo {
+      right: 1.25rem;
+      bottom: 1.25rem;
+    }
+  }
+
+  @media (max-width: var.$tablet-breakpoint) {
+    padding: 0.875rem 1.25rem 1.875rem;
+    width: 18rem;
+
+    &.other {
+      padding: 0.75rem 0.625rem 1rem 1rem;
+      width: 16.5rem;
+    }
+  }
+}

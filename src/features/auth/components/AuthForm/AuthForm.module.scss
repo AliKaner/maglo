@@ -1,0 +1,11 @@
+@use '@/styles/variables.scss' as var;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+
+  @media (max-width: var.$mobile-breakpoint) {
+    gap: 1.25rem;
+  }
+}

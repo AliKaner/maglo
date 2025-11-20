@@ -1,0 +1,25 @@
+@use '@/styles/typography.scss' as types;
+
+.iconButton {
+  cursor: pointer;
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--text-200);
+
+  &:hover {
+    color: var(--text-300);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--text-200);
+
+    &:hover {
+      color: var(--text-200);
+    }
+  }
+}

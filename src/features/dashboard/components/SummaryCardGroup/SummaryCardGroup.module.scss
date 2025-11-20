@@ -1,0 +1,82 @@
+@use '@/styles/variables.scss' as var;
+
+.summaryCardGroup {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+
+  @media (max-width: var.$desktop-breakpoint-md) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.skeletonGroup {
+  display: flex;
+  flex: 1;
+  gap: 1.25rem;
+
+  @media (max-width: var.$desktop-breakpoint-md) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.skeletonCard {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  flex: 1;
+
+  .skeletonIcon {
+    width: 2.625rem;
+    height: 2.625rem;
+    border-radius: var(--border-radius-circle);
+  }
+
+  .skeletonInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 1;
+
+    .skeletonTitle {
+      width: 60%;
+      height: 0.875rem;
+      border-radius: var(--border-radius-sm);
+      background-color: var(--gray-400);
+    }
+
+    .skeletonPrice {
+      width: 80%;
+      height: 1.5rem;
+      border-radius: var(--border-radius-sm);
+      background-color: var(--gray-400);
+    }
+  }
+
+  &.featured {
+    background-color: var(--key-black);
+  }
+
+  @media (max-width: var.$desktop-breakpoint-md) {
+    flex: 1 1 calc(50% - 0.625rem);
+    min-width: 0;
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,135 @@
+@use '@/styles/typography.scss' as types;
+@use '@/styles/variables.scss' as var;
+
+.transactionsTable {
+  width: 100%;
+  overflow-x: auto;
+
+  .table {
+    width: 100%;
+    table-layout: fixed;
+    overflow: auto;
+    border-spacing: 0;
+
+    .thead {
+      th {
+        padding-bottom: 0.3125rem;
+        @include types.font-12-semibold;
+        color: var(--text-200);
+      }
+    }
+
+    .tbody {
+      tr {
+        &:last-child {
+          .td {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    .td {
+      padding: 0.9375rem 0rem 0.75rem 0rem;
+      @include types.font-14-medium;
+      border-bottom: 1px solid var(--gray-300);
+
+      &:nth-child(odd) {
+        @include types.font-14-semibold;
+        color: var(--text-100);
+      }
+
+      &:nth-child(even) {
+        color: var(--text-200);
+      }
+    }
+
+    .alignLeft {
+      text-align: left;
+    }
+
+    .alignCenter {
+      text-align: center;
+    }
+  }
+
+  .skeletonRow {
+    .skeletonCell {
+      padding: 1rem 0.625rem;
+
+      .skeletonContent {
+        height: 1rem;
+        border-radius: var(--border-radius-sm);
+
+        &.name {
+          display: flex;
+          align-items: center;
+          gap: 0.625rem;
+          height: auto;
+          background: none;
+
+          .skeletonAvatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: var(--border-radius-circle);
+            flex-shrink: 0;
+          }
+
+          .skeletonText {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+            flex: 1;
+
+            .skeletonName {
+              width: 60%;
+              height: 0.875rem;
+              border-radius: var(--border-radius-sm);
+            }
+
+            .skeletonBusiness {
+              width: 40%;
+              height: 0.75rem;
+              border-radius: var(--border-radius-sm);
+            }
+          }
+        }
+
+        &.centered {
+          width: 60%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .nameColumn {
+    width: 13.75rem;
+  }
+
+  @media (max-width: var.$tablet-breakpoint) {
+    .table {
+      .nameColumn {
+        width: 10rem;
+      }
+    }
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    .table {
+      .nameColumn {
+        width: 3.5rem;
+      }
+
+      .td {
+        padding: 0.75rem 0.25rem;
+        font-size: 0.75rem;
+      }
+
+      .thead th {
+        font-size: 0.625rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+}

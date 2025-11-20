@@ -1,0 +1,36 @@
+@use '@/styles/typography.scss' as types;
+@use '@/styles/variables.scss' as var;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    @include types.font-25-semibold;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 2.8125rem;
+    color: var(--text-200);
+  }
+
+  @media (max-width: var.$tablet-breakpoint) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    .actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    .actions {
+      gap: 0.5rem;
+    }
+  }
+}

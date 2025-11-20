@@ -1,0 +1,33 @@
+@use '@/styles/typography.scss' as types;
+@use '@/styles/variables.scss' as var;
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 4.5rem;
+
+  @media (max-width: var.$tablet-breakpoint) {
+    gap: 1rem;
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+}
+
+.skeletonContainer {
+  width: 100%;
+  height: 12.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeletonChart {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-md);
+}

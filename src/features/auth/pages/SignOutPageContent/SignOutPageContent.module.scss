@@ -1,0 +1,28 @@
+@use '@/styles/typography.scss' as types;
+@use '@/styles/variables.scss' as var;
+
+.signOutPageContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+
+  .content {
+    text-align: center;
+
+    h1 {
+      @include types.font-30-bold;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      @include types.font-16-regular;
+      color: var(--text-secondary);
+    }
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    padding: 1.5rem 1rem;
+  }
+}

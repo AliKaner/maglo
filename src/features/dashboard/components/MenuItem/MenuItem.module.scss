@@ -1,0 +1,27 @@
+@use '@/styles/typography.scss' as types;
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 0.9375rem;
+  color: var(--text-200);
+  border-radius: var(--border-radius-md);
+  @include types.font-14-medium;
+
+  &:hover {
+    color: var(--text-100);
+    cursor: pointer;
+  }
+
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    outline-color var(--transition);
+}
+
+.active {
+  background-color: var(--primary);
+  color: var(--text-100);
+  @include types.font-14-semibold;
+}

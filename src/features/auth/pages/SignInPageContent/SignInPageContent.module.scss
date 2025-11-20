@@ -1,0 +1,13 @@
+@use '@/styles/variables.scss' as var;
+
+.signInPageContent {
+  width: 25.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+
+  @media (max-width: var.$mobile-breakpoint) {
+    width: 100%;
+    max-width: 25.25rem;
+  }
+}

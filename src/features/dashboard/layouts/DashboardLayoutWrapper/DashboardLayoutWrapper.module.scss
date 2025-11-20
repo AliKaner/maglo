@@ -1,0 +1,53 @@
+@use '@/styles/variables.scss' as var;
+
+.dashboardLayoutWrapper {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  position: relative;
+
+  .content {
+    flex: 1;
+    padding: 1.875rem 2.5rem 0rem 2.5rem;
+    overflow-y: auto;
+  }
+
+  .menuButton {
+    display: none;
+    position: fixed;
+    top: 1.875rem;
+    left: 1.25rem;
+    z-index: 997;
+    background: var(--pure-white);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    padding: 0.625rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-100);
+
+    &:hover {
+      background-color: var(--gray-200);
+    }
+  }
+
+  @media (max-width: var.$tablet-breakpoint) {
+    .menuButton {
+      display: flex;
+    }
+
+    .content {
+      width: 100%;
+      padding: 5.5rem 1.5rem 0rem 1.5rem;
+    }
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    .content {
+      padding: 5.5rem 1rem 0rem 1rem;
+    }
+  }
+}

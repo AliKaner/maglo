@@ -1,0 +1,34 @@
+@use '@/styles/typography.scss' as types;
+@use '@/styles/variables.scss' as var;
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+
+  .legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .legendDot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: var(--border-radius-circle);
+    }
+
+    .legendLabel {
+      @include types.font-12-regular;
+      color: var(--text-100);
+    }
+  }
+
+  @media (max-width: var.$tablet-breakpoint) {
+    gap: 1.25rem;
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}

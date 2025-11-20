@@ -1,0 +1,82 @@
+@use '@/styles/typography.scss' as types;
+@use '@/styles/variables.scss' as var;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--pure-white);
+  border-radius: var(--border-radius-lg);
+  outline: 1px solid var(--gray-300);
+  padding: 1.25rem 1.1875rem 1.25rem 1.5625rem;
+  max-height: 18.3125rem;
+
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      @include types.font-18-semibold;
+      color: var(--text-100);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+
+      .viewAll {
+        @include types.font-14-semibold;
+        display: flex;
+        align-items: center;
+        color: var(--secondary);
+        cursor: pointer;
+        gap: 0.375rem;
+
+        svg {
+          rotate: -90deg;
+        }
+
+        @media (max-width: var.$mobile-breakpoint) {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .cardBody {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .overflow {
+    overflow: visible;
+  }
+
+  .small {
+    margin-top: 0.9375rem;
+  }
+
+  .medium {
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: var.$tablet-breakpoint) {
+    padding: 1rem 1rem 1rem 1.25rem;
+  }
+
+  @media (max-width: var.$mobile-breakpoint) {
+    padding: 0.875rem 0.875rem 0.875rem 1rem;
+  }
+}
+
+.compact {
+  padding: 0rem;
+  outline: none;
+  background-color: transparent;
+  border-radius: none;
+  height: auto;
+  max-height: none;
+}

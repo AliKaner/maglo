@@ -1,0 +1,53 @@
+.transferItemsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  div:last-child {
+    border-bottom: none;
+  }
+}
+
+.skeletonItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--gray-100);
+
+  .skeletonDetails {
+    display: flex;
+    gap: 0.9375rem;
+    align-items: center;
+
+    .skeletonAvatar {
+      width: 2.0625rem;
+      height: 2.0625rem;
+      border-radius: var(--border-radius-circle);
+    }
+
+    .skeletonInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4375rem;
+
+      .skeletonName {
+        width: 7rem;
+        height: 0.875rem;
+        border-radius: var(--border-radius-sm);
+      }
+
+      .skeletonDate {
+        width: 5rem;
+        height: 0.75rem;
+        border-radius: var(--border-radius-sm);
+      }
+    }
+  }
+
+  .skeletonAmount {
+    width: 4rem;
+    height: 1rem;
+    border-radius: var(--border-radius-sm);
+  }
+}

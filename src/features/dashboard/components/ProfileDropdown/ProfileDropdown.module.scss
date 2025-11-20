@@ -1,0 +1,35 @@
+@use '@/styles/typography.scss' as types;
+
+.profileDropdown {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 0.375rem 0.9375rem 0.375rem 0.4375rem;
+  border-radius: var(--border-radius-rounded);
+  background-color: var(--gray-100);
+  color: var(--text-100);
+  cursor: pointer;
+
+  .profileInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .profileImage {
+      position: relative;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: var(--border-radius-circle);
+
+      img {
+        border-radius: var(--border-radius-circle);
+        object-fit: cover;
+      }
+    }
+
+    .profileName {
+      min-width: 6.25rem;
+      @include types.font-14-semibold;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@use '@/styles/typography.scss' as types;
+
+.button {
+  display: flex;
+  flex: 1;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  border-radius: var(--border-radius-lg);
+  outline: 1px solid transparent;
+  transition:
+    background-color var(--transition),
+    outline-color var(--transition);
+
+  &:focus-visible {
+    outline: 1px solid var(--text-100);
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .text {
+    @include types.font-16-semibold;
+  }
+}
+
+.block {
+  width: 100%;
+}
+
+.primary {
+  background-color: var(--primary);
+  color: var(--text-100);
+  padding: 0.875rem 0;
+  outline-color: var(--primary);
+
+  &:not(.disabled):hover {
+    background-color: var(--primary-dark);
+  }
+
+  &:disabled {
+    background-color: var(--primary-dark);
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    svg {
+      opacity: 0.6;
+    }
+  }
+}
+
+.secondary {
+  background-color: var(--pure-white);
+  color: var(--text-300);
+  outline-color: var(--gray-300);
+  padding: 0.8125rem 0;
+
+  &:not(.disabled):hover {
+    background-color: var(--gray-100);
+    outline-color: var(--primary);
+  }
+
+  &:disabled {
+    background-color: var(--gray-100);
+    color: var(--text-200);
+    cursor: not-allowed;
+
+    svg {
+      opacity: 0.6;
+    }
+  }
+}
+
+.tertiary {
+  background-color: var(--pure-white);
+  color: var(--text-300);
+  outline-color: var(--gray-300);
+
+  &:hover {
+    background-color: var(--gray-100);
+  }
+}

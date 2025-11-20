@@ -1,0 +1,29 @@
+@use '@/styles/typography' as types;
+
+.linkButton {
+  position: relative;
+  @include types.font-14-regular;
+  color: var(--text-100);
+
+  &:hover,
+  &:focus-visible {
+    .highlightIcon {
+      transform: translate(-50%, calc(-50% + 0.25rem));
+      transition: transform var(--transition);
+    }
+  }
+
+  .highlightIcon {
+    position: absolute;
+    top: calc(100%);
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 0.625rem));
+    pointer-events: none;
+    color: transparent;
+    transition: transform var(--transition);
+
+    path {
+      stroke: var(--primary);
+    }
+  }
+}
