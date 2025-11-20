@@ -15,7 +15,7 @@ const NameBusiness = ({ name, business, image }: NameBusinessProps) => {
   const [imageError, setImageError] = useState(false);
   const renderAvatar = () => {
     if (image && !imageError) {
-      return <Image src={image} alt={name} width={40} height={40} onError={() => setImageError(true)} />;
+      return <Image unoptimized src={image} alt={name} width={40} height={40} onError={() => setImageError(true)} />;
     }
 
     return name.charAt(0);

@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 
 import NameBusiness from '../NameBusiness';
@@ -9,7 +11,12 @@ import { Card } from '@/shared/components';
 import styles from './TransactionsTable.module.scss';
 import TransactionsTableSkeleton from './TransactionsTableSkeleton';
 
-const TransactionsTable = () => {
+interface TransactionsTableProps {
+  showViewAll?: boolean;
+  isFullHeight?: boolean;
+}
+
+const TransactionsTable = ({ showViewAll = true, isFullHeight = false }: TransactionsTableProps) => {
   const { data, isLoading } = useRecentTransactions();
 
   const headers = ['NAME/BUSINESS', 'TYPE', 'AMOUNT', 'DATE'];
@@ -30,8 +37,12 @@ const TransactionsTable = () => {
   };
 
   return (
-    <Card title="Recent Transactions">
-      <div className={styles.transactionsTable}>
+    <Card
+      title={`${showViewAll ? 'Recent Transactions' : 'Transactions'}`}
+      showViewAll={showViewAll}
+      isFullHeight={isFullHeight}
+    >
+      <div className={cn(styles.transactionsTable, { [styles.fullHeight]: isFullHeight })}>
         <table className={styles.table}>
           <colgroup>
             <col className={styles.nameColumn} />

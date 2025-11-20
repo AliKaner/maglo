@@ -1,3 +1,5 @@
+'use client';
+
 import financialAPI from '@/shared/lib/api/services/financial.service';
 import { useQuery } from '@tanstack/react-query';
 

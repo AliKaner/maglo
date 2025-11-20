@@ -16,26 +16,27 @@ export interface CreditCardProps {
   expiryYear: number;
   variant?: CreditCardVariant;
   network?: WalletNetworkType;
+  isDetail?: boolean;
 }
 
 
-const CreditCard = ({ cardNumber, bank, expiryMonth, expiryYear, isDefault, network }: CreditCardProps) => {
+const CreditCard = ({ cardNumber, bank, expiryMonth, expiryYear, isDefault, network, isDetail = false }: CreditCardProps) => {
   const splitedBank = bank.split(' | ');
   const logo = splitedBank[0] + '.';
   const bankName = splitedBank[1];
 
   return (
-    <div className={cn(styles.creditCard, isDefault ? styles.default : styles.other)}>
+    <div className={cn(styles.creditCard, isDefault && !isDetail ? styles.default : styles.other, isDetail && styles.detail)}>
       <div className={styles.header}>
         <p className={styles.logo}>{logo}</p>
         <div className={styles.separator} />
         <p className={styles.bank}>{bankName}</p>
       </div>
       <div className={styles.chipRow}>
-        <Icon name={isDefault ? 'Chip30' : 'Chip24'} />
+        <Icon name={isDefault && !isDetail ? 'Chip30' : 'Chip24'} />
         <Icon name="Wifi34" />
       </div>
-      <div className={isDefault ? styles.cardNumber : styles.cardNumberShort}>{cardNumber}</div>
+      <div className={isDefault && !isDetail ? styles.cardNumber : styles.cardNumberShort}>{cardNumber}</div>
       <p className={styles.expiryDate}>
         {String(expiryMonth).padStart(2, '0')}/{String(expiryYear).slice(-2)}
       </p>

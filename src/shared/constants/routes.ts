@@ -7,4 +7,8 @@ export const ROUTES = {
     SIGN_OUT: '/auth/sign-out',
   },
   DASHBOARD: '/dashboard',
+  TRANSACTIONS: '/transactions',
+  INVOICES: '/invoices',
+  MY_WALLETS: '/my-wallets',
+  SETTINGS: '/settings',
 };

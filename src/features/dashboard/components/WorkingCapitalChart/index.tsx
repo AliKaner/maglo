@@ -31,7 +31,7 @@ const WorkingCapitalChart = () => {
           <DateDropdown timeRange={data?.period || ''} />
         </div>
       }
-      hasViewAll={false}
+      showViewAll={false}
     >
       {renderContent()}
     </Card>

@@ -1,0 +1,31 @@
+@use '@/styles/variables.scss' as var;
+
+.myWalletsPageContent {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 64rem;
+  margin: 1.875rem auto 0;
+  padding: 0 1rem;
+
+  @media (max-width: var.$tablet-breakpoint) {
+    padding: 0 0.5rem;
+  }
+}
+
+.creditCardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+
+  @media (max-width: var.$tablet-breakpoint) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

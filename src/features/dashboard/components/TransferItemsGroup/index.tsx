@@ -1,3 +1,5 @@
+'use client';
+
 import { useScheduledTransfers } from '@/features/dashboard/hooks';
 import { Card } from '@/shared/components';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CreditCard, Icon } from '@/shared/components';
 
 import { useWallet } from '@/features/dashboard/hooks';
@@ -34,7 +36,7 @@ const WalletCards = () => {
       title="Wallet"
       isCompact
       gap="small"
-      hasViewAll={false}
+      showViewAll={false}
       headerActions={
         <span className={styles.headerActions}>
           <Icon name="ThreeDots22" />

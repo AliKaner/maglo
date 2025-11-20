@@ -1,5 +1,3 @@
-'use client';
-
 import SummaryCardGroup from '@/features/dashboard/components/SummaryCardGroup';
 import TransactionsTable from '@/features/dashboard/components/TransactionsTable';
 import TransferItemsGroup from '@/features/dashboard/components/TransferItemsGroup';

@@ -9,21 +9,22 @@ type GapSize = 'small' | 'medium';
 export interface CardProps {
   title?: string;
   children?: React.ReactNode;
-  hasViewAll?: boolean;
   isCompact?: boolean;
   hasOverflow?: boolean;
   headerActions?: React.ReactNode;
   gap?: GapSize;
+  showViewAll?: boolean;
+  isFullHeight?: boolean;
 }
 
-const Card = ({ title, children, isCompact, hasViewAll = true, headerActions, gap = 'medium', hasOverflow }: CardProps) => {
+const Card = ({ title, children, isCompact, showViewAll = true, headerActions, gap = 'medium', hasOverflow, isFullHeight = false }: CardProps) => {
   return (
-    <div className={cn(styles.card, isCompact && styles.compact)}>
+    <div className={cn(styles.card, isCompact && styles.compact, isFullHeight && styles.fullHeight)}>
       <div className={styles.cardHeader}>
         {title && <h3 className={styles.title}>{title}</h3>}
         <div className={styles.actions}>
           {headerActions}
-          {hasViewAll && (
+          {showViewAll && (
             <span className={styles.viewAll}>
               <span>View All</span> <Icon name="ChevronDown18" />
             </span>

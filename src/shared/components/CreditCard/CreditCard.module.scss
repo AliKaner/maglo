@@ -9,6 +9,18 @@
   color: var(--pure-white);
   width: 22.125rem;
 
+  &.detail {
+    background: var(--credit-card-bg) !important;
+    color: var(--pure-white) !important;
+    width: 100% !important;
+    padding: 0.875rem 1.25rem 1.875rem !important;
+    border-radius: var(--border-radius-lg) !important;
+    border: 0.5px solid !important;
+    border-image-source: var(--credit-card-border) !important;
+    backdrop-filter: blur(0.625rem) !important;
+    z-index: 20 !important;
+  }
+
   .header {
     display: flex;
     align-items: center;

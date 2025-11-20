@@ -11,6 +11,10 @@
   padding: 1.25rem 1.1875rem 1.25rem 1.5625rem;
   max-height: 18.3125rem;
 
+  &.fullHeight {
+    max-height: none;
+  }
+
   .cardHeader {
     display: flex;
     align-items: center;

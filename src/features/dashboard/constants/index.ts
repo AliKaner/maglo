@@ -7,10 +7,10 @@ export const WORKING_CAPITAL_CHART_LINES = [
 
 export const MENU_ITEMS: MenuItemProps[] = [
   { title: 'Dashboard', icon: 'Dashboard20', to: '/dashboard' },
-  { title: 'Transactions', icon: 'Transactions20', to: '#transactions' },
-  { title: 'Invoices', icon: 'Invoices20', to: '#invoices' },
-  { title: 'My Wallets', icon: 'WalletOpened20', to: '#my-wallets' },
-  { title: 'Settings', icon: 'Settings20', to: '#settings' },
+  { title: 'Transactions', icon: 'Transactions20', to: '/transactions' },
+  { title: 'Invoices', icon: 'Invoices20', to: '/invoices' },
+  { title: 'My Wallets', icon: 'WalletOpened20', to: '/my-wallets' },
+  { title: 'Settings', icon: 'Settings20', to: '/settings' },
 ];
 
 export const FOOTER_MENU_ITEMS: MenuItemProps[] = [

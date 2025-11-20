@@ -1,0 +1,14 @@
+@use '@/styles/variables.scss' as var;
+
+.transactionsPageContent {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 64rem;
+  margin: 1.875rem auto 0;
+  padding: 0 1rem;
+
+  @media (max-width: var.$tablet-breakpoint) {
+    padding: 0 0.5rem;
+  }
+}
