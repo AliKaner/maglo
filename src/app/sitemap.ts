@@ -1,29 +1,30 @@
 import type { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cashflow.com';
+const DEPLOYMENT_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://maglo-nine.vercel.app';
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: baseUrl,
+      url: DEPLOYMENT_URL,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
-      url: `${baseUrl}/auth/sign-in`,
+      url: `${DEPLOYMENT_URL}/auth/sign-in`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/auth/sign-up`,
+      url: `${DEPLOYMENT_URL}/auth/sign-up`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/dashboard`,
+      url: `${DEPLOYMENT_URL}/dashboard`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
