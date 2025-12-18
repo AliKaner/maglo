@@ -1,4 +1,4 @@
-# NL-CASE
+# Maglo
 
 Finansal gösterge panelleri, cüzdanlar, faturalar ve işlem yönetimi için hazırlanmış,
 **Next.js 16 + React 19** tabanlı bir demo uygulamadır. Kimlik doğrulama, responsive
