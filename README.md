@@ -16,7 +16,7 @@ dashboard ve sahte/gerçek API desteğiyle uçtan uca bir ürün akışını sim
 
 ```bash
 git clone https://github.com/AliKaner/nl-case.git
-cd nl-case
+cd maglo
 ```
 
 - **Bağımlılıkları yükle**
